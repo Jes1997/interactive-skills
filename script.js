@@ -1,24 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const skills = [
-    "Desarrollo web",
-    "Bases de datos",
-    "APIs REST",
-    "Git & GitHub",
-    "Laravel",
-    "JavaScript",
-    "CSS Animations",
-    "FullCalendar",
-    "DataTables",
-    "SEO con Laravel",
-    "Optimización de consultas SQL",
-    "Integración de APIs externas",
+  const spinBtn = document.getElementById("spinBtn");
+
+  const slots = [
+    document.getElementById("frontendSlot"),
+    document.getElementById("backendSlot"),
+    document.getElementById("toolsSlot"),
   ];
 
-  const btn = document.getElementById("generateBtn");
-  const result = document.getElementById("result");
+  let indices = [0, 0, 0];
+  const slotHeight = 60;
 
-  btn.addEventListener("click", () => {
-    const randomSkill = skills[Math.floor(Math.random() * skills.length)];
-    result.textContent = `✨ ${randomSkill} ✨`;
-  });
+  function spin() {
+    slots.forEach((slot, i) => {
+      const items = slot.children.length;
+      indices[i] = (indices[i] + 1) % items;
+      const offset = -indices[i] * slotHeight;
+      slot.style.transform = `translateY(${offset}px)`;
+    });
+  }
+
+  spinBtn.addEventListener("click", spin);
 });

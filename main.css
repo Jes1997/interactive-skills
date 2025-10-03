@@ -1,44 +1,117 @@
+/* ======== Base ======== */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #e2e8f0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0f;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-dark {
+  background: radial-gradient(circle at center, #0f172a 0%, #0a0a0f 100%);
+}
+
+.neon-text {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+}
+
+/* ======== Layout ======== */
+.skills-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 900px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* ======== Slot Machine ======== */
+.skills-slot {
+  position: relative;
+  width: 180px;
+  height: 60px;
+  overflow: hidden;
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #00ffff88;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.slot-window {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-.container {
-  text-align: center;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-  width: 90%;
-  max-width: 400px;
+.slot-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-button {
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  border: none;
+.slot-inner span {
+  font-size: 1.2rem;
+  line-height: 60px;
+  color: #fff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* ======== Botón ======== */
+.neon-btn {
+  background: transparent;
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 10px 24px;
   border-radius: 8px;
-  background: #06b6d4;
-  color: white;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00ffff33;
 }
 
-button:hover {
-  background: #0ea5e9;
+.neon-btn:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff66;
   transform: scale(1.05);
 }
 
-#result {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #f472b6;
+/* ======== Responsivo ======== */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
