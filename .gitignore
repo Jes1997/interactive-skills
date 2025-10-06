@@ -1,0 +1,25 @@
+# Node / npm
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Builds / distribuciones
+dist/
+build/
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# GitHub Pages
+# Ignorar archivos de deploy si usas gh-pages branch
